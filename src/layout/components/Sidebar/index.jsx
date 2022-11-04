@@ -1,10 +1,11 @@
 import React from 'react';
 import NavItem from './NavItems/NavItem';
-import { sideMenu } from './helper';
+import { getSideMenu } from './helper';
 
 import { Sidebar } from './styles';
 
-const SidebarComponent = props => {
+const SidebarComponent = ({ items }) => {
+  const sideMenu = getSideMenu(items);
   return (
     <Sidebar>
       {sideMenu.map((item, index) => {

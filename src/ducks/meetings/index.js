@@ -1,5 +1,5 @@
 import { createAction, createReducer } from 'redux-act';
-import MeetingsService from 'services/MeetingsService';
+import MeetingsService from 'services/meetingsService';
 
 export const DUCK_NAME = 'meetings';
 
@@ -8,12 +8,12 @@ export const INITIAL_STATE = {
   loadingMeetings: false,
   errorLoadMeetings: null,
   sucessLoadMeetings: false,
-  savingMeeting: false,
-  errorSaveMeeting: null,
-  successSaveMeeting: false,
   creatingMeeting: false,
   errorCreateMeeting: null,
   successCreateMeeting: false,
+  savingMeeting: false,
+  errorSaveMeeting: null,
+  successSaveMeeting: false,
   deletingMeetings: false,
   errorDeleteMeetings: null,
   successDeleteMeetings: false,
@@ -38,22 +38,22 @@ export const [
   loadMeetingsStarted,
   loadMeetingsSucceeded,
   loadMeetingsFailed,
-  saveMeetingStarted,
-  saveMeetingSucceeded,
-  saveMeetingFailed,
   createMeetingStarted,
   createMeetingSucceeded,
   createMeetingFailed,
+  saveMeetingStarted,
+  saveMeetingSucceeded,
+  saveMeetingFailed,
   deleteMeetingsStarted,
   deleteMeetingsSucceeded,
   deleteMeetingsFailed,
 ] = actions.map((action) => createAction(action));
 
 export const loadMeetings = (
-  data,
+  input,
 ) => async (dispatch) => {
   try {
-    const { data } = await MeetingsService.getMeetings(data);
+    const { data } = await MeetingsService.getMeetings(input);
     dispatch(loadMeetingsSucceeded({ data }));
   } catch (error) {
     dispatch(loadMeetingsFailed({ error }));
@@ -108,24 +108,6 @@ const reducer = createReducer({
     successLoadMeetings: false,
     errorLoadMeetings: payload.error,
   }),
-  [saveMeetingStarted]: (state) => ({
-    ...state,
-    savingMeeting: true,
-    errorSaveMeeting: null,
-    successSaveMeeting: null,
-  }),
-  [saveMeetingSucceeded]: (state) => ({
-    ...state,
-    savingMeeting: false,
-    errorSaveMeeting: null,
-    successSaveMeeting: true,
-  }),
-  [saveMeetingFailed]: (state, payload) => ({
-    ...state,
-    savingMeeting: false,
-    successSaveMeeting: false,
-    errorSaveMeeting: payload.error,
-  }),
   [createMeetingStarted]: (state) => ({
     ...state,
     creatingMeetings: true,
@@ -143,6 +125,24 @@ const reducer = createReducer({
     creatingMeeting: false,
     successCreateMeeting: false,
     errorCreateMeeting: payload.error,
+  }),
+  [saveMeetingStarted]: (state) => ({
+    ...state,
+    savingMeeting: true,
+    errorSaveMeeting: null,
+    successSaveMeeting: null,
+  }),
+  [saveMeetingSucceeded]: (state) => ({
+    ...state,
+    savingMeeting: false,
+    errorSaveMeeting: null,
+    successSaveMeeting: true,
+  }),
+  [saveMeetingFailed]: (state, payload) => ({
+    ...state,
+    savingMeeting: false,
+    successSaveMeeting: false,
+    errorSaveMeeting: payload.error,
   }),
   [deleteMeetingsStarted]: (state) => ({
     ...state,

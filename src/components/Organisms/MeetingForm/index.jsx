@@ -1,5 +1,7 @@
-import React from 'react';
-import Form from 'components/Molecules/Form';
+import React, {useState, useEffect} from 'react';
+import EditForm from 'components/Molecules/EditForm';
+import CreateForm from 'components/Molecules/CreateForm';
+
 import {
   RegisterFormContainer,
   CardContainer,
@@ -7,27 +9,40 @@ import {
   Title,
 } from './styles';
 
+
 function MeetingForm({
-  formType,
-  handleSave,
+  isEditing,
   initialValues,
+  locationId,
+  roomId,
+  removeForm,
 }) {
-  const getTitle = () => {
-    if(formType == 'add'){
-      return 'Add new meeting.'
-    }
-    if(formType == 'edit'){
-      return 'Edit existing meeting.'
-    }
-  }
-  
+  const [initialValuesView, setInitialValuesView] = useState(initialValues);
+
+  useEffect(() => {
+    setInitialValuesView(initialValues);
+    console.log(initialValuesView);
+  }, [initialValues]);
   return (
     <RegisterFormContainer>
       <CardContainer>
-        <TitleContainer>
-          <Title>${getTitle()}</Title>
-        </TitleContainer>
-        <Form onSave={handleSave} initialValues={initialValues}/>
+        {
+          isEditing ? 
+            ( 
+              <EditForm
+                  initialValues={initialValues}
+                  removeForm={removeForm}
+                />
+            ) : 
+            ( 
+              <CreateForm
+                initialValues={initialValues}
+                locationId={locationId}
+                roomId={roomId}
+                removeForm={removeForm}
+              />
+            )
+        }
       </CardContainer>
     </RegisterFormContainer>
   )

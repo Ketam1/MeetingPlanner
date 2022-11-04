@@ -4,11 +4,6 @@ import storage from 'redux-persist/lib/storage';
 import meetings, { DUCK_NAME as MEETINGS_DUCK_NAME } from './meetings';
 import locations, { DUCK_NAME as LOCATIONS_DUCK_NAME } from './locations';
 
-const rootPersistConfig = {
-  key: 'root',
-  storage,
-};
-
 export const reducers = {
   [MEETINGS_DUCK_NAME]: meetings,
   [LOCATIONS_DUCK_NAME]: locations,
@@ -21,4 +16,4 @@ const rootReducer = (state, action) => {
   return appReducer(newState, action);
 };
 
-export default persistReducer(rootPersistConfig, rootReducer);
+export default rootReducer;

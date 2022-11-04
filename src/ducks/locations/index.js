@@ -1,7 +1,7 @@
 import { createAction, createReducer } from 'redux-act';
-import LocationsService from 'services/LocationsService';
+import LocationsService from 'services/locationsService';
 
-export const DUCK_NAME = 'meetings';
+export const DUCK_NAME = 'locations';
 
 export const INITIAL_STATE = {
   locations: [],
@@ -35,12 +35,14 @@ const reducer = createReducer({
   [loadLocationsStarted]: (state) => ({
     ...state,
     loadingLocations: true,
+    successLoadLocations: false,
     errorLoadLocations: null,
   }),
   [loadLocationsSucceeded]: (state, payload) => ({
     ...state,
     loadingLocations: false,
     successLoadLocations: true,
+    errorLoadLocations: null,
     locations: payload.data,
   }),
   [loadLocationsFailed]: (state, payload) => ({

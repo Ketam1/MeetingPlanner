@@ -1,4 +1,4 @@
-import MeetingsRepository from 'repositories/MeetingsRepository';
+import MeetingsRepository from 'repositories/meetingsRepository';
 
 const repository = new MeetingsRepository();
 

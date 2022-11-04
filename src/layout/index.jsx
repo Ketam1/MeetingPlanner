@@ -10,15 +10,14 @@ import Sidebar from './components/Sidebar'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
-const AppLayout = props => {
-  const { children } = props;
+const AppLayout = ({children, items}) => {
   return (
   	<PageLayout>
       <PageHeader>
         <Header />
       </PageHeader>
       <PageAside> 
-        <Sidebar />
+        <Sidebar items={items}/>
       </PageAside>
       <PageMain>{children}</PageMain>
       <PageFooter>

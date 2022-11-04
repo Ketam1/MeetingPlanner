@@ -12,7 +12,7 @@ const FooterComponent = props => {
       <InfoContainer>
         <LeftInfoContainer>
           <Info>About This Site</Info>
-          <Info justify>Simple Contact List Manager made for the Bravi selection process</Info>
+          <Info justify>Simple Meeting Planner for the LabTrans/UFSC selection process</Info>
         </LeftInfoContainer>
         <RightInfoContainer>
           <Info>Designed By:</Info>

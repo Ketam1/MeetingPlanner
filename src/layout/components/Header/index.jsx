@@ -7,7 +7,7 @@ const HeaderComponent = props => {
   return (
     <Header>
       <Title>
-        <h1>Contact List Manager</h1>
+        <h1>Meeting Planner</h1>
       </Title>
     </Header>
   )

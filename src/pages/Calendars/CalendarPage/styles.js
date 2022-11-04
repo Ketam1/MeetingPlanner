@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import colors from 'assets/styles/colors';
 
-export const ManagePageContainer = styled.div`
+export const CalendarPageContainer = styled.div`
   height: 100vh !important;
   width: 100%;
   display: flex;
@@ -11,17 +11,20 @@ export const ManagePageContainer = styled.div`
 `;
 
 export const LeftContainer = styled.div`
-  height: 500px;
-  padding: 10px;
-  width: 75%;
+  height: 100%;
+  width: ${props => props.noForms ? "100%" : "75%"};
   border-right: 1px solid ${colors.black};
   display: flex;
   justify-content: center;
 `;
 
+export const CalendarContainer = styled.div`
+  width: 100%;
+`;
+
 export const RightContainer = styled.div`
   height: 100%;
-  width: 25%;
+  width: ${props => props.noForms ? "0%" : "25%"};
 `;
 
 export const TextBox = styled.div`

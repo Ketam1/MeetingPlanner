@@ -1,8 +1,7 @@
 import axios from 'axios';
-import { API_URL } from 'common/helpers/api';
 
 export default class MeetingsRepository {
-  constructor({ routePrefix = API_URL, routeVersion = 'v1', routeContext = 'meetings' } = {}) {
+  constructor({ routePrefix = "https://localhost:7205", routeVersion = 'v1', routeContext = 'meetings' } = {}) {
     this.url = `${routePrefix}/api/${routeVersion}/${routeContext}/`;
   }
 

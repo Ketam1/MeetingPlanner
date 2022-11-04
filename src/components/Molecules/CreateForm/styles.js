@@ -9,11 +9,15 @@ export const FormContainer = styled.div`
 `;
 
 export const InputFieldsContainer = styled.div`
-  padding: 10%;
+  padding: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  > * {
+    margin-top: 20px !important;
+  } 
 `;
 
 export const NameContainer = styled.div`

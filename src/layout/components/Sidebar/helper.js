@@ -1,26 +1,21 @@
 import {
   Home,
-  PeopleAlt,
-  PersonAdd,
-  ManageAccounts,
 } from '@mui/icons-material';
 
-export const sideMenu = [
-  {
-    label: 'Home',
-    Icon: Home,
-    to: '/',
-  },
-  {
-    label: 'Branches',
-    Icon: PeopleAlt,
-    to: '/branch',
-    children: [
-      {
-        label: 'Meetings',
-        Icon: ManageAccounts,
-        to: 'meetings',
-      },
-    ],
-  },
-];
+export const getSideMenu = (items) => {
+  const sideMenu = [
+    {
+      label: 'Home',
+      Icon: Home,
+      to: '/',
+    },
+  ];
+  if(items){
+    items.forEach(item => {
+      sideMenu.push(item);
+    });
+  }
+  
+  return sideMenu;
+}
+
