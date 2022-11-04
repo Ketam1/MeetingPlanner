@@ -13,7 +13,7 @@ export const ManagePageContainer = styled.div`
 export const LeftContainer = styled.div`
   height: 500px;
   padding: 10px;
-  width: 50%;
+  width: 75%;
   border-right: 1px solid ${colors.black};
   display: flex;
   justify-content: center;
@@ -21,7 +21,7 @@ export const LeftContainer = styled.div`
 
 export const RightContainer = styled.div`
   height: 100%;
-  width: 50%;
+  width: 25%;
 `;
 
 export const TextBox = styled.div`
@@ -32,7 +32,7 @@ export const TextBox = styled.div`
   align-items: center;
 `;
 
-export const Title = styled.div`
+export const Title = styled.div`ks
   font-size: 25px;
   margin-bottom: 30px;
 `;

@@ -12,19 +12,14 @@ export const sideMenu = [
     to: '/',
   },
   {
-    label: 'Users',
+    label: 'Branches',
     Icon: PeopleAlt,
-    to: '/users',
+    to: '/branch',
     children: [
       {
-        label: 'Register',
-        Icon: PersonAdd,
-        to: 'register',
-      },
-      {
-        label: 'Manage',
+        label: 'Meetings',
         Icon: ManageAccounts,
-        to: 'manage',
+        to: 'meetings',
       },
     ],
   },

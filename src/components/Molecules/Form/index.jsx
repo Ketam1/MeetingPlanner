@@ -18,10 +18,10 @@ function Form({
   initialValues,
 }) {
   const [isFavorite, setIsFavorite] = useState(false);
-  const [name, setName] = useState(initialValues.name);
-  const [phone, setPhone] = useState(initialValues.phone);
-  const [email, setEmail] = useState(initialValues.email);
-  const [whatsapp, setWhatsapp] = useState(initialValues.whatsapp);
+  const [name, setName] = useState(initialValues?.name);
+  const [phone, setPhone] = useState(initialValues?.phone);
+  const [email, setEmail] = useState(initialValues?.email);
+  const [whatsapp, setWhatsapp] = useState(initialValues?.whatsapp);
 
   const clearFields = () => {
     setIsFavorite(false);

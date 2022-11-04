@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import colors from 'assets/styles/colors';
 
-export const UsersPageContainer = styled.div`
+export const CalendarsPageContainer = styled.div`
   background-color: ${colors.secondaryGrey};
   height: 100%;
 `;
 
-export const UsersHeader = styled.div`
+export const CalendarsHeader = styled.div`
   height: 50px; 
   display: flex;
   align-items: center;
@@ -15,7 +15,7 @@ export const UsersHeader = styled.div`
   border-bottom: 2px solid ${colors.primaryBlue};
 `;
 
-export const UsersHeaderTitle = styled.div`
+export const CalendarsHeaderTitle = styled.div`
   font-size: 20px;
 `;
 

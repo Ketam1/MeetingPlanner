@@ -7,17 +7,17 @@ import {
   Title,
 } from './styles';
 
-function ManageForm({
+function MeetingForm({
   formType,
   handleSave,
   initialValues,
 }) {
   const getTitle = () => {
     if(formType == 'add'){
-      return 'Add Contact to User'
+      return 'Add new meeting.'
     }
     if(formType == 'edit'){
-      return 'Edit Contact or User'
+      return 'Edit existing meeting.'
     }
   }
   
@@ -33,4 +33,4 @@ function ManageForm({
   )
 }
 
-export default ManageForm;
+export default MeetingForm;
